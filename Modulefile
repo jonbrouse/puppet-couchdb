@@ -7,4 +7,4 @@ description 'Installs and manages couchdb'
 project_page 'https://github.com/jonbrouse/puppet-couchdb'
 
 ## Add dependencies, if any:
-dependenc 'metcalfc/rpmrepos', '>=0.0.1'
+dependency 'metcalfc/rpmrepos', '>=0.0.1'
