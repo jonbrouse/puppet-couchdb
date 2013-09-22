@@ -68,8 +68,8 @@
 #
 class couchdb (
 
-  $admin_name                 = $couchdb::params::admin_name,
-  $admin_password             = $couchdb::params::admin_password,
+  $admin_name                 = admin,
+  $admin_password             = admin,
   $allow_jsonp                = $couchdb::params::allow_jsonp,
   $authentication_handlers    = $couchdb::params::authentication_handlers,
   $bind_address               = $couchdb::params::bind_address,
