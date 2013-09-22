@@ -2,9 +2,11 @@
 
 This module manages couchdb on Linux (RedHat/Debian) distros.
 
-Pluginsync needs to be enabled for this module to function properly.
-Read more about pluginsync in our [docs](http://docs.puppetlabs.com/guides/plugins_in_modules.html#enabling-pluginsync)
+## Dependencies
 
+This module requires [metcalfc/rpmrepos](https://forge.puppetlabs.com/metcalfc/rpmrepos)
+
+To install the module with it's required dependencies, issue the following: puppet module install jonbrouse/couchdb
 ## Description
 
 This module installs couchdb
