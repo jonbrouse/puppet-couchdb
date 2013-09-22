@@ -46,9 +46,9 @@
 #  metcalfc-rpmrepos - https://github.com/metcalfc/puppet-rpmrepos
 #
 #  Packaged couchdb
-#    - RHEL: EPEL or custom package
-#    - Debian/Ubuntu: Default Install or custom package (not supported)
-#    - SuSE: Default Install or custom package (not supported)
+#    - RHEL/CentOS: EPEL 
+#    - Debian/Ubuntu: (not supported)
+#    - SuSE: (not supported)
 #
 #
 # === Author:
@@ -57,8 +57,12 @@
 # Github:   /jonbrouse
 #
 # To Do:   
-#    WWW Auth
-#    Debian/Ubuntu and SuSe support
+#    - [ ] WWW Auth
+#    - [ ] RHEL: Custom Package
+#    - [ ] Debian/Ubuntu: Default Install 
+#    - [ ] Debian/Ubuntu: Custom Package
+#    - [ ] SuSE: Default Install
+#    - [ ] SuSE: Custom Package
 #
 # === Sample Usage:
 #
