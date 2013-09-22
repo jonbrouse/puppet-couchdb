@@ -7,7 +7,7 @@ Read more about pluginsync in our [docs](http://docs.puppetlabs.com/guides/plugi
 
 ## Description
 
-This module is still in the development phase and does not currently work.
+This module installs couchdb
 
 ## Usage
 
