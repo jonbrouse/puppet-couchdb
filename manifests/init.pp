@@ -102,6 +102,8 @@ class couchdb (
 
 ) inherits couchdb::params {
 
+  include rpmrepos
+  
   class { 'couchdb::package': 
     notify => Class['couchdb::service'],
   }
