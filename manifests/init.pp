@@ -99,7 +99,7 @@ class couchdb (
 
 ) inherits couchdb::params {
 
-  include rpmrepos
+  include rpmrepos::epel
   
   class { 'couchdb::package': 
     notify => Class['couchdb::service'],
