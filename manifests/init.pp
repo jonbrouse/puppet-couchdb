@@ -30,7 +30,7 @@
 #
 # [*port*]                        - 5984
 #
-# [*require_valid_user*]      - If you set this to true, you should also uncomment the WWW-Authenticate
+# [*require_valid_user*]          - If you set this to true, you should also uncomment the WWW-Authenticate
 #
 # [*uri_file*]                    - /var/lib/couchdb/couch.uri
 #
@@ -43,16 +43,13 @@
 #
 #
 # === Requires:
-#  puppetlabs-stdlib - https://github.com/puppetlabs/puppetlabs-stdlib
+#  metcalfc-rpmrepos - https://github.com/metcalfc/puppet-rpmrepos
 #
 #  Packaged couchdb
 #    - RHEL: EPEL or custom package
 #    - Debian/Ubuntu: Default Install or custom package (not supported)
 #    - SuSE: Default Install or custom package (not supported)
 #
-#  stdlib
-#    - puppetlabs-stdlib module >= 0.1.6
-#    - plugin sync enabled to obtain the anchor type
 #
 # === Author:
 #
