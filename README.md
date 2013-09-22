@@ -2,7 +2,7 @@
 
 This module manages couchdb on Linux (RedHat/Debian) distros.
 
-## Dependencies
+## Installation & Dependencies
 
 This module requires [metcalfc/rpmrepos](https://forge.puppetlabs.com/metcalfc/rpmrepos)
 
