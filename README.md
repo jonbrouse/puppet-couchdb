@@ -21,6 +21,7 @@ Installs the couchdb package.
 
     class { 'couchdb': }
 
+## License
 ```
 Author:: Jon Brouse (<jbrouse19@gmail.com>)
 Copyright:: Copyright (c) 2013 Jon Brouse
