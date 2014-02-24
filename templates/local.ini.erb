@@ -4,31 +4,31 @@
 ##########################################
 
 [couchdb]
-database_dir = <%= scope.lookupvar('couchdb::params::database_dir') %>
-view_index_dir = <%= scope.lookupvar('couchdb::params::view_index_dir') %>
-util_driver_dir = <%= scope.lookupvar('couchdb::params::util_driver_dir') %>
-max_document_size = <%= scope.lookupvar('couchdb::params::max_document_size') %>
-max_attachment_chunk_size = <%= scope.lookupvar('couchdb::params::max_attachment_chunk_size') %>
-os_process_timeout = <%= scope.lookupvar('couchdb::params::os_process_timeout') %>
-max_dbs_open = <%= scope.lookupvar('couchdb::params::max_dbs_open') %>
-delayed_commits = <%= scope.lookupvar('couchdb::params::delayed_commits') %>
-uri_file = <%= scope.lookupvar('couchdb::params::uri_file') %>
+database_dir = <%= @database_dir %>
+view_index_dir = <%= @view_index_dir %>
+util_driver_dir = <%= @util_driver_dir %>
+max_document_size = <%= @max_document_size %>
+max_attachment_chunk_size = <%= @max_attachment_chunk_size %>
+os_process_timeout = <%= @os_process_timeout %>
+max_dbs_open = <%= @max_dbs_open %>
+delayed_commits = <%= @delayed_commits %>
+uri_file = <%= @uri_file %>
 
 [httpd]
-port = <%= scope.lookupvar('couchdb::params::port') %>
-bind_address = <%= scope.lookupvar('couchdb::params::bind_address') %>
-max_connections = <%= scope.lookupvar('couchdb::params::max_connections') %>
-authentication_handlers = <%= scope.lookupvar('couchdb::params::authentication_handlers') %>
-default_handler = <%= scope.lookupvar('couchdb::params::default_handler') %>
-secure_rewrites = <%= scope.lookupvar('couchdb::params::secure_rewrites') %>
-vhost_global_handlers = <%= scope.lookupvar('couchdb::params::vhost_global_handlers') %>
-allow_jsonp = <%= scope.lookupvar('couchdb::params::allow_jsonp') %>
-log_max_chunk_size = <%= scope.lookupvar('couchdb::params::log_max_chunk_size') %>
+port = <%= @port %>
+bind_address = <%= @bind_address %>
+max_connections = <%= @max_connections %>
+authentication_handlers = <%= @authentication_handlers %>
+default_handler = <%= @default_handler %>
+secure_rewrites = <%= @secure_rewrites %>
+vhost_global_handlers = <%= @vhost_global_handlers %>
+allow_jsonp = <%= @allow_jsonp %>
+log_max_chunk_size = <%= @log_max_chunk_size %>
 
 [log]
-file = <%= scope.lookupvar('couchdb::params::log_file') %>
-level = <%= scope.lookupvar('couchdb::params::log_level') %>
-include_sasl = <%= scope.lookupvar('couchdb::params::include_sasl') %>
+file = <%= @log_file %>
+level = <%= @log_level %>
+include_sasl = <%= @include_sasl %>
 
 [couch_httpd_auth]
 authentication_db = _users
@@ -36,15 +36,16 @@ authentication_redirect = /_utils/session.html
 require_valid_user = false
 timeout = 600 ; number of seconds before automatic logout
 auth_cache_size = 50 ; size is number of cache entries
+secret = <%= @secret %>
 
 [query_servers]
-javascript = <%= scope.lookupvar('couchdb::params::javascript') %>
+javascript = <%= @javascript %>
 
 ; Changing reduce_limit to false will disable reduce_limit.
 ; If you think you're hitting reduce_limit with a "good" reduce function,
 ; please let us know on the mailing list so we can fine tune the heuristic.
 [query_server_config]
-reduce_limit = <%= scope.lookupvar('couchdb::params::reduce_limit') %>
+reduce_limit = <%= @reduce_limit %>
 
 ; enable external as an httpd handler, then link it with commands here.
 ; note, this api is still under consideration.
@@ -52,4 +53,4 @@ reduce_limit = <%= scope.lookupvar('couchdb::params::reduce_limit') %>
 ; mykey = /path/to/mycommand
 
 [admins]
-<%= scope.lookupvar('couchdb::params::admin_name') %> = <%= scope.lookupvar('couchdb::params::admin_password') %>
+<%= @admin_name %> = <%= @admin_password %>
