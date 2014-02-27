@@ -32,6 +32,8 @@
 #
 # [*require_valid_user*]          - If you set this to true, you should also uncomment the WWW-Authenticate
 #
+# [*secret*]                      - The secret token used for Proxy Authentication method
+#
 # [*uri_file*]                    - /var/lib/couchdb/couch.uri
 #
 # [*util_driver_dir*]             - /usr/lib64/erlang/lib/couch-1.0.4/priv/lib
@@ -94,6 +96,7 @@ class couchdb (
   $port                       = $couchdb::params::port,
   $reduce_limit               = $couchdb::params::reduce_limit,
   $require_valid_user         = $couchdb::params::require_valid_user,
+  $secret                     = $couchdb::params::secret,
   $service_enable             = true,
   $secure_rewrites            = $couchdb::params::secure_rewrites,
   $util_driver_dir            = $couchdb::params::util_driver_dir,

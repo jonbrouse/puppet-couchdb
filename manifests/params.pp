@@ -35,6 +35,7 @@ class couchdb::params {
   $port                       = '5984'
   $reduce_limit               = true
   $require_valid_user         = false
+  $secret                     = 'changeme'
   $secure_rewrites            = true
   $util_driver_dir            = '/usr/lib64/erlang/lib/couch-1.0.4/priv/lib'
   $uri_file                   = '/var/lib/couchdb/couch.uri'
