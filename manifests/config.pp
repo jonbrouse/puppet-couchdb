@@ -13,7 +13,7 @@
 # Sample Usage:
 #
 # This class file is not called directly
-class couchdb::config inherits couchdb::params {
+class couchdb::config inherits couchdb {
   File {
     owner => 'couchdb',
     group => 'root',
