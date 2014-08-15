@@ -41,7 +41,7 @@ class couchdb::params {
   $uri_file                   = '/var/lib/couchdb/couch.uri'
   $vhost_global_handlers      = '_utils, _uuids, _session, _oauth, _users'
   $view_index_dir             = '/var/lib/couchdb'
-  
+
   case $::osfamily {
     'RedHat': {
       $server_package_name = 'couchdb'

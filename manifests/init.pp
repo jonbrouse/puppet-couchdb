@@ -1,6 +1,6 @@
 # == Class: couchdb
 #
-# This module manages couchdb. 
+# This module manages couchdb.
 #
 # === 'local.ini' Parameters:
 #
@@ -48,20 +48,20 @@
 #  metcalfc-rpmrepos - https://github.com/metcalfc/puppet-rpmrepos
 #
 #  Packaged couchdb
-#    - RHEL/CentOS: EPEL 
+#    - RHEL/CentOS: EPEL
 #    - Debian/Ubuntu: (not supported)
 #    - SuSE: (not supported)
 #
 #
 # === Author:
 #
-# Twitter:  @jonbrouse 
+# Twitter:  @jonbrouse
 # Github:   /jonbrouse
 #
-# === To Do:   
+# === To Do:
 #    - [ ] WWW Auth
 #    - [ ] RHEL: Custom Package
-#    - [ ] Debian/Ubuntu: Default Install 
+#    - [ ] Debian/Ubuntu: Default Install
 #    - [ ] Debian/Ubuntu: Custom Package
 #    - [ ] SuSE: Default Install
 #    - [ ] SuSE: Custom Package
@@ -73,7 +73,6 @@
 #
 #
 class couchdb (
-
   $admin_name                 = admin,
   $admin_password             = admin,
   $allow_jsonp                = $couchdb::params::allow_jsonp,
@@ -103,21 +102,19 @@ class couchdb (
   $uri_file                   = $couchdb::params::uri_file,
   $vhost_global_handlers      = $couchdb::params::vhost_global_handlers,
   $view_index_dir             = $couchdb::params::view_index_dir,
+) {
 
-) inherits couchdb::params {
-
+  include couchdb::params
   include rpmrepos::epel
-  
-  class { 'couchdb::package': 
+
+  class { 'couchdb::package':
     notify => Class['couchdb::service'],
   }
 
- class { 'couchdb::config':
+  class { 'couchdb::config':
     require => Class['couchdb::package'],
     notify  => Class['couchdb::service'],
   }
-  
+
   class { 'couchdb::service': }
 }
-
-
