@@ -23,11 +23,11 @@ class couchdb::config {
     mode  => '0644',
   }
 
-  file { $couchdb::params::couchdb_conf_dir:
+  file { $couchdb::couchdb_conf_dir:
     ensure => directory,
   }
 
-  file { "${couchdb::params::couchdb_conf_dir}/local.ini":
+  file { "${couchdb::couchdb_conf_dir}/local.ini":
     ensure  => file,
     content => template('couchdb/local.ini.erb'),
   }
