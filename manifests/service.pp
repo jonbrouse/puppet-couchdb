@@ -2,10 +2,10 @@
 
 class couchdb::service {
   service { 'couchdb':
-    ensure      => running,
-    enable      => true,
-    hasstatus   => true,
-    hasrestart  => true,
-    require     => Package[ 'couchdb' ]
+    ensure     => running,
+    enable     => true,
+    hasstatus  => true,
+    hasrestart => true,
+    require    => Package['couchdb'],
   }
 }

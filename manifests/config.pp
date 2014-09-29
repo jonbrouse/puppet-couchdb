@@ -13,17 +13,22 @@
 # Sample Usage:
 #
 # This class file is not called directly
-class couchdb::config inherits couchdb {
+class couchdb::config {
+
+  include couchdb::params
+
   File {
     owner => 'couchdb',
     group => 'root',
     mode  => '0644',
   }
-  file { "${couchdb::params::couchdb_conf_dir}":
+
+  file { $couchdb::couchdb_conf_dir:
     ensure => directory,
   }
-  file { "${couchdb::params::couchdb_conf_dir}/local.ini":
+
+  file { "${couchdb::couchdb_conf_dir}/local.ini":
     ensure  => file,
     content => template('couchdb/local.ini.erb'),
-  } 
+  }
 }
