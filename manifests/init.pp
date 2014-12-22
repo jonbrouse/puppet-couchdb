@@ -40,12 +40,14 @@
 #
 # [*view_index_dir*]              - /var/lib/couchdb
 #
+# [*version*]                     - latest ; optional couchdb package verision
+#
 #
 # [**]  -
 #
 #
 # === Requires:
-#  metcalfc-rpmrepos - https://github.com/metcalfc/puppet-rpmrepos
+#  metcalfc-rpmrepos - https://github.com/metcalfc/puppet-rpmrepos ; if Yumrepo['epel'] is not defined elsewhere
 #
 #  Packaged couchdb
 #    - RHEL/CentOS: EPEL
@@ -103,12 +105,17 @@ class couchdb (
   $uri_file                   = '/var/lib/couchdb/couch.uri',
   $vhost_global_handlers      = '_utils, _uuids, _session, _oauth, _users',
   $view_index_dir             = '/var/lib/couchdb',
+  $version                    = 'latest',
 ) {
 
   include couchdb::params
-  include rpmrepos::epel
+
+  if !defined(Yumrepo['epel']) {
+    include rpmrepos::epel
+  }
 
   class { 'couchdb::package':
+    ensure => $version,
     notify => Class['couchdb::service'],
   }
 
