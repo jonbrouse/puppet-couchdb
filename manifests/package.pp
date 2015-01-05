@@ -3,6 +3,11 @@
 class couchdb::package {
   package { 'couchdb':
     ensure  => $::couchdb::package_ensure,
-    require => Yumrepo['epel'],
+  }
+
+  if $::couchdb::manage_epel_repo {
+    Package['couchdb'] {
+      require +> Yumrepo['epel'],
+    }
   }
 }
