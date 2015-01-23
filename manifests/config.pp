@@ -38,6 +38,6 @@ class couchdb::config {
   # it changed. Therefore we provide this special workaround config file.
   file { "${couchdb::couchdb_conf_dir}/local.d/zzz-uuid.ini":
     replace => no,
-    content => "[couchdb]",
+    content => '[couchdb]',
   }
 }
