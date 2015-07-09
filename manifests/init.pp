@@ -106,7 +106,7 @@ class couchdb (
 ) {
 
   include couchdb::params
-  include rpmrepos::epel
+  #  include rpmrepos::epel
 
   class { 'couchdb::package':
     notify => Class['couchdb::service'],
