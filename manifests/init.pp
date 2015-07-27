@@ -120,7 +120,6 @@ class couchdb (
   class { 'couchdb::service': }
 
   couchdb::admin { $admin_name:
-    ensure   => present,
     password => $admin_password,
   }
 }
