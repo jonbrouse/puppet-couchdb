@@ -35,7 +35,7 @@ class couchdb::config {
   if $couchdb::admin_name {
     exec { 'couchdb admin':
       command => "/usr/bin/curl -X PUT localhost/_confi/admins/${couchdb::admin_name} -d '\"${couchdb::admin_password}\"'",
-      unless  => "/bin/grep ${couchdb::admin_name} ${couchdb::couchdb_conf_dir}/local.ini",
+      unless  => "/bin/grep ^${couchdb::admin_name} ${couchdb::couchdb_conf_dir}/local.ini",
     }
   }
 }
