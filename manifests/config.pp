@@ -32,11 +32,4 @@ class couchdb::config {
     content => template('couchdb/default.ini.erb'),
   }
 
-  if $couchdb::admin_name {
-    exec { 'couchdb admin':
-      command => "/usr/bin/curl -X PUT http://localhost:5984/_config/admins/${couchdb::admin_name} -d '\"${couchdb::admin_password}\"'",
-      unless  => "/bin/grep ^${couchdb::admin_name} ${couchdb::couchdb_conf_dir}/local.ini",
-      require => Service['couchdb'],
-    }
-  }
 }
