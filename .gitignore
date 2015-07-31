@@ -1,0 +1,10 @@
+.*.sw?
+.bundle
+.pkg
+.ruby-version
+.vagrant
+Gemfile.lock
+log/
+modules/
+spec/fixtures
+log/

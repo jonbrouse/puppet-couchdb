@@ -106,7 +106,7 @@ class couchdb (
 ) {
 
   include couchdb::params
-  include rpmrepos::epel
+  #  include rpmrepos::epel
 
   class { 'couchdb::package':
     notify => Class['couchdb::service'],
@@ -118,4 +118,8 @@ class couchdb (
   }
 
   class { 'couchdb::service': }
+
+  couchdb::admin { $admin_name:
+    password => $admin_password,
+  }
 }

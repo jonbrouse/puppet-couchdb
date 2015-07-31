@@ -27,8 +27,9 @@ class couchdb::config {
     ensure => directory,
   }
 
-  file { "${couchdb::couchdb_conf_dir}/local.ini":
+  file { "${couchdb::couchdb_conf_dir}/default.ini":
     ensure  => file,
-    content => template('couchdb/local.ini.erb'),
+    content => template('couchdb/default.ini.erb'),
   }
+
 }
